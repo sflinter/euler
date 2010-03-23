@@ -1,0 +1,1965 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     69206,       1956]
+NotebookOptionsPosition[     63294,       1753]
+NotebookOutlinePosition[     63662,       1769]
+CellTagsIndexPosition[     63619,       1766]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Euler 2", "Section",
+ CellChangeTimes->{{3.451373585407013*^9, 3.451373586808359*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"euler2", "[", "x_", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "fib1", ",", " ", "fib2", ",", " ", "newterm", ",", " ", "sum"}], "}"}],
+      ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"fib1", " ", "=", " ", "1"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"fib2", " ", "=", " ", "2"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"sum", " ", "=", " ", "2"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"newterm", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"newterm", " ", "<", " ", "x"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"newterm", " ", "=", " ", 
+          RowBox[{"fib1", " ", "+", " ", "fib2"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"fib1", " ", "=", " ", "fib2"}], ";", "\[IndentingNewLine]", 
+         
+         RowBox[{"fib2", " ", "=", " ", "newterm"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"EvenQ", "[", "newterm", "]"}], ",", " ", 
+           RowBox[{"sum", " ", "+=", " ", "newterm"}]}], "]"}]}]}], 
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", "sum"}]}], 
+    "\[IndentingNewLine]", "]"}]}], "Code"]], "Code",
+ CellChangeTimes->{{3.450769441864904*^9, 3.4507694514761047`*^9}, {
+   3.450769498266877*^9, 3.450769655968874*^9}, {3.4507697019972143`*^9, 
+   3.450769706592881*^9}, 3.4507697711307096`*^9, {3.450770099829514*^9, 
+   3.450770123918651*^9}, {3.450770210885496*^9, 3.4507702605059147`*^9}, {
+   3.450770668747896*^9, 3.450770709984083*^9}, {3.450770829613799*^9, 
+   3.4507708738891487`*^9}, {3.450771372916593*^9, 3.4507713745635967`*^9}, {
+   3.4507715755591583`*^9, 3.450771706226091*^9}, {3.4507717531501493`*^9, 
+   3.450771810411662*^9}, {3.4507718668925323`*^9, 3.450771870099221*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"euler2", "[", "4000000", "]"}]], "Input",
+ CellChangeTimes->{{3.450771718497959*^9, 3.450771721602827*^9}, {
+  3.450771880827406*^9, 3.450771908266501*^9}}],
+
+Cell[BoxData[
+ FormBox["4613732", TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.450771722755218*^9, 3.450771779814314*^9, {3.4507718162793407`*^9, 
+   3.450771824522192*^9}, {3.450771877778121*^9, 3.450771909099925*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler 19", "Section",
+ CellChangeTimes->{{3.451373597927507*^9, 3.451373599042985*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"euler19", "[", 
+   RowBox[{"x_", ",", " ", "y_"}], "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"currentdate", ",", " ", "sundays"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"currentdate", " ", "=", " ", "x"}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"sundays", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"DateDifference", "[", 
+          RowBox[{"currentdate", ",", "y"}], "]"}], " ", ">", " ", "0"}], ",",
+         "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"DateString", "[", 
+             RowBox[{"currentdate", ",", " ", 
+              RowBox[{"{", "\"\<DayName\>\"", "}"}]}], "]"}], " ", "\[Equal]",
+             " ", "\"\<Sunday\>\""}], ",", 
+           RowBox[{"sundays", "++"}]}], "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"currentdate", " ", "=", " ", 
+          RowBox[{"DatePlus", "[", 
+           RowBox[{"currentdate", ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"1", ",", " ", "\"\<Month\>\""}], "}"}]}], "]"}]}]}]}], 
+       "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", "sundays"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Code",
+ CellChangeTimes->{{3.450772460724901*^9, 3.450772497096735*^9}, {
+  3.4507725352512693`*^9, 3.450772729204192*^9}, {3.45077276414785*^9, 
+  3.450772767138234*^9}, {3.450772804032826*^9, 3.450772838586894*^9}, {
+  3.450772871864485*^9, 3.4507728930811367`*^9}, {3.4507730095465393`*^9, 
+  3.450773044616624*^9}, {3.450773084795863*^9, 3.4507730863794937`*^9}, {
+  3.450773165729445*^9, 3.450773188399479*^9}, {3.450773249058312*^9, 
+  3.450773272566524*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"euler19", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1901", ",", "1", ",", "1"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"2000", ",", "12", ",", "31"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.450772743660639*^9, 3.450772749100994*^9}, {
+  3.450773278839571*^9, 3.4507732950525637`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"171", " ", "Null"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4519357765078506`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1900", ",", "1", ",", "1"}], "}"}], " ", "<", " ", 
+    RowBox[{"{", 
+     RowBox[{"1999", ",", " ", "12", ",", " ", "31"}], "}"}]}], ",", " ", "1",
+    ",", " ", "0"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4507731008913383`*^9, 3.450773126153947*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1900", ",", "1", ",", "1"}], "}"}], "<", 
+     RowBox[{"{", 
+      RowBox[{"1999", ",", "12", ",", "31"}], "}"}]}], ",", "1", ",", "0"}], 
+   "]"}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.4507731102376127`*^9, 3.450773142651692*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToString", "[", "1", "]"}]], "Input",
+ CellChangeTimes->{{3.450773520197487*^9, 3.450773522319229*^9}}],
+
+Cell[BoxData[
+ FormBox["\<\"1\"\>", TraditionalForm]], "Output",
+ CellChangeTimes->{3.4507735236765137`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToWord", "[", "1", "]"}]], "Input",
+ CellChangeTimes->{{3.450773526553092*^9, 3.450773529031186*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"ToWord", "(", "1", ")"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.450773529856556*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler 22", "Section",
+ CellChangeTimes->{{3.451373546672613*^9, 3.4513735481984463`*^9}}],
+
+Cell["\<\
+Using names.txt (right click and' Save Link/Target As ...'), a 46 K text file \
+containing over five - thousand first names, begin by sorting it into \
+alphabetical order.Then working out the alphabetical value for each name, \
+multiply this value by its alphabetical position in the list to obtain a name \
+score.For example, when the list is sorted into alphabetical order, COLIN, \
+which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938 th name in the list.So, \
+COLIN would obtain a score of 938*53 = 49714.
+
+What is the total of all the name scores in the file?\
+\>", "Text",
+ CellChangeTimes->{{3.4513686823757563`*^9, 3.4513686846435547`*^9}, {
+  3.451373554545426*^9, 3.451373556017737*^9}}],
+
+Cell[BoxData[
+ RowBox[{"euler22", " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"s", ",", " ", "charposn", ",", " ", "wordval"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"s", " ", "=", " ", 
+      RowBox[{"Sort", "[", 
+       RowBox[{
+        RowBox[{"Import", "[", 
+         RowBox[{"\"\<~/src/euler/names.csv\>\"", ",", " ", "\"\<CSV\>\""}], 
+         "]"}], "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"charposn", "[", "x_", "]"}], " ", ":=", " ", 
+      RowBox[{"x", " ", "-", " ", "64"}]}], ";", "\n", 
+     RowBox[{
+      RowBox[{"wordval", "[", "x_", "]"}], " ", ":=", " ", 
+      RowBox[{"Total", "[", 
+       RowBox[{"Map", "[", 
+        RowBox[{"charposn", ",", " ", 
+         RowBox[{"ToCharacterCode", "[", "x", "]"}]}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Total", "[", 
+      RowBox[{"MapIndexed", "[", 
+       RowBox[{"Times", ",", " ", 
+        RowBox[{"Map", "[", 
+         RowBox[{"wordval", ",", " ", "s"}], "]"}]}], "]"}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Code",
+ CellChangeTimes->{{3.450778080560936*^9, 3.450778107415609*^9}, {
+   3.450778145531414*^9, 3.4507781774545116`*^9}, {3.450778228255197*^9, 
+   3.450778350400868*^9}, {3.4507785277125673`*^9, 3.450778562321536*^9}, {
+   3.4507785952490883`*^9, 3.450778608102293*^9}, {3.450778680156135*^9, 
+   3.450778772574973*^9}, {3.450778933530973*^9, 3.4507789338883038`*^9}, {
+   3.45077896519178*^9, 3.450778968901184*^9}, 3.450779103003685*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["euler22"], "Input",
+ CellChangeTimes->{{3.450778536132135*^9, 3.450778536945816*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", "871198282", "}"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4507789368485928`*^9, 3.4507789711561203`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler 24", "Section",
+ CellChangeTimes->{{3.451935811941264*^9, 3.451935813569228*^9}}],
+
+Cell["\<\
+A permutation is an ordered arrangement of objects.For example, 3124 is one \
+possible permutation of the digits 1, 2, 3 and 4. If all of the permutations \
+are listed numerically or alphabetically, we call it lexicographic order.The \
+lexicographic permutations of 0, 1 and 2 are :
+\t012 021 102 120 201 210
+
+What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, \
+5, 6, 7, 8 and 9?\
+\>", "Text",
+ CellChangeTimes->{{3.45193585360293*^9, 3.451935854490768*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"euler24", "[", "x_", "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{"Permutations", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "0", ",", " ", "1", ",", " ", "2", ",", " ", "3", ",", " ", "4", ",", 
+      " ", "5", ",", " ", "6", ",", " ", "7", ",", " ", "8", ",", " ", "9"}], 
+     "}"}], "]"}], "[", 
+   RowBox[{"[", "x", "]"}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.4507738821927633`*^9, 3.450773903122302*^9}, {
+  3.450773976626748*^9, 3.450774004761705*^9}, {3.4507740637394257`*^9, 
+  3.4507740812547407`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"euler24", "[", "1000000", "]"}]], "Input",
+ CellChangeTimes->{{3.4507740858092613`*^9, 3.450774091253872*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{
+   "2", ",", "7", ",", "8", ",", "3", ",", "9", ",", "1", ",", "5", ",", "4", 
+    ",", "6", ",", "0"}], "}"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4507740936990213`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler 26", "Section",
+ CellChangeTimes->{{3.451373523137187*^9, 3.4513735251183767`*^9}}],
+
+Cell["\<\
+A unit fraction contains 1 in the numerator.The decimal representation of the \
+unit fractions with denominators 2 to 10 are given :
+   ^(1)/_ (2) = 0.5
+    ^(1)/_ (3) = 0. (3)
+    ^(1)/_ (4) = 0.25
+    ^(1)/_ (5) = 0.2
+    ^(1)/_ (6) = 0.1 (6)
+    ^(1)/_ (7) = 0. (142857)
+    ^(1)/_ (8) = 0.125
+    ^(1)/_ (9) = 0. (1)
+    ^(1)/_ (10) = 0.1
+
+Where 0.1 (6) means 0.166666 ..., and has a 1 - digit recurring cycle.It can \
+be seen that^(1)/_ (7) has a 6 - digit recurring cycle.Find the value of d < \
+1000 for which^(1)/_ (d) contains the longest recurring cycle in its decimal \
+fraction part.\
+\>", "Text",
+ CellChangeTimes->{{3.451368594066517*^9, 3.451368621749282*^9}, {
+  3.451373531704115*^9, 3.4513735358605223`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"euler26", " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "fractions", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"fractions", " ", "=", " ", 
+      RowBox[{"Table", "[", " ", 
+       RowBox[{
+        RowBox[{"Length", "[", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{
+           RowBox[{"RealDigits", "[", 
+            RowBox[{"1", "/", "i"}], "]"}], "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", " ", "1000"}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Position", "[", 
+      RowBox[{"fractions", ",", " ", 
+       RowBox[{"Max", "[", "fractions", "]"}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Code"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["euler26"], "Input",
+ CellChangeTimes->{{3.451368560317174*^9, 3.451368561894621*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"983"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{3.4513685624770803`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler 27", "Section",
+ CellChangeTimes->{{3.4513734133494864`*^9, 3.451373423787671*^9}}],
+
+Cell["\<\
+Euler published the remarkable quadratic formula :
+  n\.b2 + n + 41
+
+It turns out that the formula will produce 40 primes for the consecutive \
+values n = 0 to 39. However, when n = 40, 40^(2) + 40 + 41 = 40 (40 + 1) + 41 \
+is divisible by 41, and certainly when n = 41, 41 \.b2 + 41 + 41 is clearly \
+divisible by 41.
+
+Using computers, the incredible formula n\.b2 \:2212 79 n + 1601 was \
+discovered, which produces 80 primes for the consecutive values n = 0 to 79. \
+The product of the coefficients, \:221279 and 1601, is \:2212 126479.
+
+Considering quadratics of the form : n\.b2 + an + b, where | a | < 1000 and | \
+b | < 1000
+
+where | n | is the modulus/absolute value of n
+e.g. | 11 | = 11 and | \:22124 | = 4
+
+Find the product of the coefficients, a and b, for the quadratic expression \
+that produces the maximum number of primes for consecutive values of n, \
+starting with n = 0.
+\
+\>", "Text",
+ CellChangeTimes->{{3.451373459748217*^9, 3.451373461548819*^9}}],
+
+Cell[BoxData[
+ RowBox[{"euler27", " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"arr", ",", " ", "x", ",", " ", "y"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"numberprimes", "[", 
+       RowBox[{"a_", ",", " ", "b_"}], "]"}], " ", ":=", " ", 
+      RowBox[{"Module", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"f", ",", " ", "i", ",", " ", "bprime"}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"bprime", " ", "=", " ", 
+          RowBox[{"Prime", "[", "b", "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"f", " ", "=", " ", 
+          RowBox[{"Function", "[", 
+           RowBox[{"n", ",", " ", 
+            RowBox[{
+             RowBox[{"n", "^", "2"}], "+", 
+             RowBox[{"a", "*", "n"}], " ", "+", " ", "bprime"}]}], "]"}]}], 
+         ";", "\[IndentingNewLine]", 
+         RowBox[{"i", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"While", "[", 
+          RowBox[{
+           RowBox[{"PrimeQ", "[", 
+            RowBox[{"f", "[", "i", "]"}], "]"}], ",", " ", 
+           RowBox[{"i", ";", " ", 
+            RowBox[{"i", "++"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+         "i"}]}], "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"arr", " ", "=", " ", 
+      RowBox[{"Array", "[", 
+       RowBox[{"numberprimes", ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"2000", ",", " ", "168"}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1000"}], ",", " ", "1"}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"x", " ", "=", " ", 
+      RowBox[{
+       RowBox[{"Position", "[", 
+        RowBox[{"arr", ",", " ", 
+         RowBox[{"Max", "[", 
+          RowBox[{"Flatten", "[", "arr", "]"}], "]"}]}], "]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", "1"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"y", " ", "=", " ", 
+      RowBox[{
+       RowBox[{"Position", "[", 
+        RowBox[{"arr", ",", " ", 
+         RowBox[{"Max", "[", 
+          RowBox[{"Flatten", "[", "arr", "]"}], "]"}]}], "]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"x", "-", "1001"}], ")"}], " ", "*", " ", 
+      RowBox[{"Prime", "[", "y", "]"}]}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Code",
+ CellChangeTimes->{{3.45137049544477*^9, 3.451370620174526*^9}, 
+   3.451370675535019*^9, {3.451370715814046*^9, 3.4513707319265947`*^9}, {
+   3.451370848982238*^9, 3.4513708908793077`*^9}, {3.45137096092225*^9, 
+   3.451371058943802*^9}, {3.451371159368877*^9, 3.4513711622439537`*^9}, {
+   3.4513712051854477`*^9, 3.4513712663341827`*^9}, {3.451371323955907*^9, 
+   3.451371326223448*^9}, {3.4513716348175697`*^9, 3.451371635142096*^9}, {
+   3.451371774579688*^9, 3.451371777163473*^9}, {3.4513828260703983`*^9, 
+   3.451382845044365*^9}, {3.4513840138014107`*^9, 3.451384019397953*^9}, {
+   3.4513848460748177`*^9, 3.45138490396169*^9}, {3.4513849486973763`*^9, 
+   3.451384971978277*^9}, {3.4513850078390903`*^9, 3.451385080305814*^9}, {
+   3.4513851211566553`*^9, 3.451385139386421*^9}, {3.4513851702707567`*^9, 
+   3.4513851724432793`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["euler27"], "Input",
+ CellChangeTimes->{{3.451385110839417*^9, 3.4513851126349773`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", "59231"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.451385113813027*^9, 3.4513851592937927`*^9, 
+  3.451385192369733*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler 28", "Section",
+ CellChangeTimes->{{3.451385546603894*^9, 3.451385549225559*^9}}],
+
+Cell["\<\
+Starting with the number 1 and moving to the right in a clockwise direction a \
+5 by 5 spiral is formed as follows : 21 22 23 24 25
+20 7 8 9 10
+19 6 1 2 11
+18 5 4 3 12
+17 16 15 14 13
+
+It can be verified that the sum of both diagonals is 101.
+
+What is the sum of both diagonals in a 1001 by 1001 spiral formed in the same \
+way?\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"spiralarray", "[", "arr_", "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "dim", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"dim", " ", "=", " ", 
+      RowBox[{
+       RowBox[{"Dimensions", "[", "arr", "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"AppendTo", "[", 
+      RowBox[{
+       RowBox[{"arr", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"dim", "^", "2"}], ")"}], "+", "1"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "arr"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.451385590818143*^9, 3.4513856872643547`*^9}, {
+   3.451386119592184*^9, 3.451386193176375*^9}, {3.451386238543672*^9, 
+   3.451386326512948*^9}, {3.451386370986588*^9, 3.451386526646758*^9}, {
+   3.451386582501354*^9, 3.451386704346673*^9}, {3.451386803273288*^9, 
+   3.451386806517025*^9}, {3.451386889520898*^9, 3.451386924709902*^9}, {
+   3.45138696464644*^9, 3.451386973093367*^9}, {3.45138722508598*^9, 
+   3.451387229747326*^9}, {3.451387515231679*^9, 3.451387517342455*^9}, {
+   3.451387607929329*^9, 3.451387611368333*^9}, {3.451387650446706*^9, 
+   3.4513876590355387`*^9}, {3.451387710889078*^9, 3.451387714309334*^9}, {
+   3.451387745636146*^9, 3.451387817637218*^9}, {3.451387852116324*^9, 
+   3.451387892085657*^9}, {3.451387924336417*^9, 3.451387928746995*^9}, {
+   3.451388084258712*^9, 3.451388085831009*^9}, {3.451388136222784*^9, 
+   3.451388141195681*^9}, 3.451405303654014*^9, {3.451405500637499*^9, 
+   3.451405540644629*^9}, {3.451405600275669*^9, 3.451405647251719*^9}, {
+   3.451406494594404*^9, 3.451406542761016*^9}, {3.4514065824681387`*^9, 
+   3.451406621433693*^9}, {3.4514066544590273`*^9, 3.451406660378845*^9}, {
+   3.4514068813487253`*^9, 3.451406901584538*^9}, {3.4514082281739283`*^9, 
+   3.4514082721697073`*^9}, {3.451408308665173*^9, 3.451408321414549*^9}, {
+   3.451408352995906*^9, 3.45140835934612*^9}, {3.451408410254656*^9, 
+   3.451408442670105*^9}, {3.4515848509031057`*^9, 3.451584881145549*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"spiralarray", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "3"}], "}"}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.451386942731439*^9, 3.4513869456619873`*^9}, {
+  3.451405666108115*^9, 3.451405669113167*^9}, {3.451406479090295*^9, 
+  3.451406482767668*^9}, {3.45140813970726*^9, 3.4514081479507017`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"Set", "::", "\<\"setps\"\>"}], 
+   RowBox[{
+   ":", " "}], "\<\"\\!\\(TraditionalForm\\`\\((\[NoBreak] \\*GridBox[{{\\\"1\
+\\\", \\\"2\\\"}, {\\\"4\\\", \\\"3\\\"}}, RowSpacings -> 1, ColumnSpacings \
+-> 1, ColumnAlignments -> Left] \[NoBreak])\\)\\) in the part assignment is \
+not a symbol. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/setps\\\", ButtonNote -> \
+\\\"Set::setps\\\"]\\)\"\>"}], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{
+  3.4514084607294893`*^9, {3.451584861297957*^9, 3.451584884219458*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "2"},
+     {"4", "3"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.451408460731904*^9, {3.451584861301874*^9, 3.451584884223794*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler 30", "Section",
+ CellChangeTimes->{{3.45192542016195*^9, 3.4519254217366743`*^9}}],
+
+Cell["\<\
+Surprisingly there are only three numbers that can be written as the sum of \
+fourth powers of their digits : 
+1634 = 1^(4) + 6^(4) + 3^(4) + 4^(4)
+8208 = 8^(4) + 2^(4) + 0^(4) + 8^(4)
+9474 = 9^(4) + 4^(4) + 7^(4) + 4^(4)
+
+As 1 = 1^(4) is not a sum it is not included.The sum of these numbers is 1634 \
++ 8208 + 9474 = 19316.
+
+Find the sum of all the numbers that can be written as the sum of fifth \
+powers of their digits.\
+\>", "Text",
+ CellChangeTimes->{3.451925438980543*^9}],
+
+Cell[BoxData[
+ RowBox[{"euler30", ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "count", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"count", "=", "0"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", "=", "10"}], ",", 
+       RowBox[{"i", "<", "1000000"}], ",", 
+       RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Total", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Power", "[", 
+              RowBox[{"#", ",", "5"}], "]"}], "&"}], "/@", 
+            RowBox[{"IntegerDigits", "[", "i", "]"}]}], "]"}], "==", "i"}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Print", "[", "i", "]"}], ";", 
+          RowBox[{"count", "+=", "i"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+      "]"}], ";", "\[IndentingNewLine]", "count"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Code",
+ CellChangeTimes->{{3.4519260109940853`*^9, 3.4519261432357407`*^9}, {
+  3.451926190029427*^9, 3.4519261907522593`*^9}, {3.451926235465947*^9, 
+  3.451926367358348*^9}, {3.451926437027246*^9, 3.451926438282329*^9}, {
+  3.4519265052474546`*^9, 3.451926507652568*^9}, {3.451926671613752*^9, 
+  3.451926698843708*^9}, {3.451926862447689*^9, 3.451926871264381*^9}, {
+  3.451928680078529*^9, 3.451928719730372*^9}, {3.451928761469552*^9, 
+  3.451928811591873*^9}, {3.451928851547617*^9, 3.451928852392928*^9}, {
+  3.451928883444811*^9, 3.451928901524951*^9}, {3.451928996589851*^9, 
+  3.4519289975281773`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["euler30"], "Input",
+ CellChangeTimes->{{3.451926114859995*^9, 3.451926127445225*^9}, {
+  3.451926471189033*^9, 3.45192647271439*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox["4150", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.45192881596451*^9, 3.451928856288855*^9, {3.451928892260791*^9, 
+   3.451928905005909*^9}}],
+
+Cell[BoxData[
+ FormBox["4151", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.45192881596451*^9, 3.451928856288855*^9, {3.451928892260791*^9, 
+   3.451928905007823*^9}}],
+
+Cell[BoxData[
+ FormBox["54748", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.45192881596451*^9, 3.451928856288855*^9, {3.451928892260791*^9, 
+   3.4519289059906263`*^9}}],
+
+Cell[BoxData[
+ FormBox["92727", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.45192881596451*^9, 3.451928856288855*^9, {3.451928892260791*^9, 
+   3.45192890674185*^9}}],
+
+Cell[BoxData[
+ FormBox["93084", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.45192881596451*^9, 3.451928856288855*^9, {3.451928892260791*^9, 
+   3.4519289067611732`*^9}}],
+
+Cell[BoxData[
+ FormBox["194979", TraditionalForm]], "Print",
+ CellChangeTimes->{
+  3.45192881596451*^9, 3.451928856288855*^9, {3.451928892260791*^9, 
+   3.451928908910342*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ FormBox["443839", TraditionalForm]], "Output",
+ CellChangeTimes->{{3.451928755388144*^9, 3.451928817824671*^9}, 
+   3.451928857223358*^9, 3.451928894155217*^9, 3.451928925784237*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler 32", "Section",
+ CellChangeTimes->{{3.451933704112808*^9, 3.451933707792777*^9}}],
+
+Cell["\<\
+We shall say that an n - digit number is pandigital if it makes use of all \
+the digits 1 to n exactly once; for example, the 5 - digit number, 15234, is \
+1 through 5 pandigital.
+
+The product 7254 is unusual, as the identity, 39*186 = 7254, containing \
+multiplicand, multiplier, and product is 1 through 9 pandigital.
+
+Find the sum of all products whose multiplicand/multiplier/product identity \
+can be written as a 1 through 9 pandigital.
+
+HINT : Some products can be obtained in more than one way so be sure to only \
+include it once in your sum.\
+\>", "Text",
+ CellChangeTimes->{{3.4519346822808847`*^9, 3.451934700196122*^9}}],
+
+Cell[BoxData[
+ RowBox[{"euler32", ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"Pandigital", ",", "l"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Pandigital", "[", "x_", "]"}], " ", ":=", " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Sort", "[", 
+        RowBox[{"Flatten", "[", 
+         RowBox[{"Join", "[", 
+          RowBox[{"IntegerDigits", "/@", "x"}], "]"}], "]"}], "]"}], 
+       "\[Equal]", 
+       RowBox[{"{", 
+        RowBox[{
+        "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", 
+         "8", ",", "9"}], "}"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"l", "=", 
+      RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", "=", "1000"}], ",", 
+       RowBox[{"i", "<", "10000"}], ",", 
+       RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"Pandigital", "[", 
+            RowBox[{"{", 
+             RowBox[{"i", ",", "#", ",", 
+              RowBox[{"i", "/", "#"}]}], "}"}], "]"}], ",", 
+           RowBox[{"AppendTo", "[", 
+            RowBox[{"l", ",", "i"}], "]"}]}], "]"}], "&"}], "/@", 
+        RowBox[{"Divisors", "[", "i", "]"}]}]}], "\[IndentingNewLine]", "]"}],
+      ";", "\[IndentingNewLine]", 
+     RowBox[{"Total", "[", 
+      RowBox[{"Union", "[", "l", "]"}], "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Code",
+ CellChangeTimes->{{3.4519337178986473`*^9, 3.451933752040895*^9}, {
+   3.451933839750587*^9, 3.451933858820849*^9}, {3.451933931301705*^9, 
+   3.451934057781876*^9}, {3.45193410600348*^9, 3.4519341086590443`*^9}, 
+   3.451934158685153*^9, {3.451934371529114*^9, 3.451934410928763*^9}, 
+   3.451934454872876*^9, {3.451934517515663*^9, 3.451934613426289*^9}, {
+   3.451934762694056*^9, 3.45193479955091*^9}, {3.451935260652883*^9, 
+   3.4519353299796743`*^9}, {3.45193536253909*^9, 3.4519353990104513`*^9}, {
+   3.451935439695312*^9, 3.45193543993119*^9}, {3.4519356015158987`*^9, 
+   3.451935640415513*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["euler32"], "Input",
+ CellChangeTimes->{{3.4519341234975977`*^9, 3.4519341255516567`*^9}}],
+
+Cell[BoxData[
+ FormBox["45228", TraditionalForm]], "Output",
+ CellChangeTimes->{{3.451934568319076*^9, 3.451934617330164*^9}, {
+   3.45193477317078*^9, 3.451934807343354*^9}, 3.451935404572445*^9, 
+   3.451935443885745*^9, {3.451935615334847*^9, 3.4519356449243603`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler  34", "Section",
+ CellChangeTimes->{{3.4519359778441772`*^9, 3.451935983306385*^9}}],
+
+Cell["\<\
+145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
+
+Find the sum of all numbers which are equal to the sum of the factorial of \
+their digits.Note : as 1! = 1 and 2! = 2 are not sums they are not included.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"euler34", ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"SumOfFactorials", ",", "sum"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"SumOfFactorials", "[", "n_", "]"}], ":=", 
+      RowBox[{"Total", "[", 
+       RowBox[{"Factorial", "/@", 
+        RowBox[{"IntegerDigits", "[", "n", "]"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"sum", "=", "0"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", "=", "3"}], ",", 
+       RowBox[{"i", "<", "100000"}], ",", 
+       RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"SumOfFactorials", "[", "i", "]"}], "\[Equal]", "i"}], ",", 
+         
+         RowBox[{"sum", "+=", "i"}]}], "]"}]}], "\[IndentingNewLine]", "]"}], 
+     ";", "\[IndentingNewLine]", "sum"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Code",
+ CellChangeTimes->{{3.451935997511711*^9, 3.451936184368017*^9}, {
+  3.451936224002782*^9, 3.451936258048087*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["euler34"], "Input",
+ CellChangeTimes->{{3.451936166231111*^9, 3.451936168713283*^9}}],
+
+Cell[BoxData[
+ FormBox["40730", TraditionalForm]], "Output",
+ CellChangeTimes->{{3.4519361696171303`*^9, 3.451936228072644*^9}, 
+   3.451936263794558*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler35", "Section",
+ CellChangeTimes->{{3.4515865923571453`*^9, 3.451586597339579*^9}}],
+
+Cell["\<\
+The number, 197, is called a circular prime because all rotations of the \
+digits : 197, 971, and 719, are themselves prime.There are thirteen such \
+primes below 100 : 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
+
+How many circular primes are there below one million?\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CircularPrimeQ", "[", "n_", "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "digits", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"PrimeQ", "[", "n", "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"digits", " ", "=", " ", 
+        RowBox[{"IntegerDigits", "[", "n", "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"i", "=", "1"}], ",", " ", 
+         RowBox[{"i", "<", 
+          RowBox[{"Length", "[", "digits", "]"}]}], ",", " ", 
+         RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"digits", " ", "=", " ", 
+           RowBox[{"RotateRight", "[", "digits", "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"Not", "[", 
+             RowBox[{"PrimeQ", "[", 
+              RowBox[{"FromDigits", "[", "digits", "]"}], "]"}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Return", "[", "False", "]"}]}], "]"}]}]}], 
+        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", "True"}], 
+      ",", "\[IndentingNewLine]", "False"}], "\[IndentingNewLine]", "]"}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Code",
+ CellChangeTimes->{{3.4515857284151173`*^9, 3.451585803057839*^9}, {
+   3.451585847237639*^9, 3.4515859059911547`*^9}, 3.451585971171204*^9, {
+   3.451586039143179*^9, 3.451586139707511*^9}, {3.4515861805886517`*^9, 
+   3.451586204933085*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"euler35", "[", "n_", "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"i", ",", " ", "p", ",", " ", "cp"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"i", "=", "1"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"p", "=", 
+      RowBox[{"Prime", "[", "i", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"cp", "=", "0"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{"p", " ", "<", " ", "n"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"CircularPrimeQ", "[", "p", "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"cp", "++"}]}], "\[IndentingNewLine]", "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"p", "=", 
+         RowBox[{"Prime", "[", 
+          RowBox[{"++", "i"}], "]"}]}]}]}], "\[IndentingNewLine]", "]"}], ";",
+      "\[IndentingNewLine]", "cp"}]}], "\[IndentingNewLine]", "]"}]}]], "Code",\
+
+ CellChangeTimes->{{3.4515863181707983`*^9, 3.4515865146189947`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"euler35", "[", "1000000", "]"}]], "Input",
+ CellChangeTimes->{{3.451586666333726*^9, 3.451586672189083*^9}}],
+
+Cell[BoxData[
+ FormBox["55", TraditionalForm]], "Output",
+ CellChangeTimes->{3.451586675994451*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler 36", "Section",
+ CellChangeTimes->{{3.451969093345086*^9, 3.451969095305772*^9}}],
+
+Cell[TextData[{
+ "The decimal number, 585 = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["1001001001", "2"], TraditionalForm]]],
+ " (binary), is palindromic in both bases.Find the sum of all numbers, less \
+than one million, which are palindromic in base 10 and base 2.\n\n(Please \
+note that the palindromic number, in either base, may not include leading \
+zeros.)\n"
+}], "Text",
+ CellChangeTimes->{{3.451969112313405*^9, 3.451969126335528*^9}}],
+
+Cell[BoxData[
+ RowBox[{"euler36", ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"PalindromeQ", ",", "BasesPalindromeQ", ",", "sum"}], "}"}], ",",
+     "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"PalindromeQ", "[", "n_", "]"}], ":=", 
+      RowBox[{"PalindromeQ", "[", 
+       RowBox[{"n", ",", "10"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"PalindromeQ", "[", 
+       RowBox[{"n_", ",", "b_"}], "]"}], ":=", 
+      RowBox[{
+       RowBox[{"IntegerDigits", "[", 
+        RowBox[{"n", ",", "b"}], "]"}], "\[Equal]", 
+       RowBox[{"Reverse", "[", 
+        RowBox[{"IntegerDigits", "[", 
+         RowBox[{"n", ",", "b"}], "]"}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"BasesPalindromeQ", "[", "n_", "]"}], ":=", 
+      RowBox[{
+       RowBox[{"PalindromeQ", "[", "n", "]"}], "&&", 
+       RowBox[{"PalindromeQ", "[", 
+        RowBox[{"n", ",", "2"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"sum", "=", "0"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", "=", "1"}], ",", 
+       RowBox[{"i", "<", "1000000"}], ",", 
+       RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"BasesPalindromeQ", "[", "i", "]"}], ",", 
+         RowBox[{"sum", "+=", "i"}]}], "]"}]}], "\[IndentingNewLine]", "]"}], 
+     ";", "\[IndentingNewLine]", "sum"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Code",
+ CellChangeTimes->{{3.451969135685511*^9, 3.451969143651208*^9}, {
+  3.4519691763574123`*^9, 3.45196934312164*^9}, {3.451969542489975*^9, 
+  3.451969595472578*^9}, {3.45196964175281*^9, 3.451969808402516*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["euler36"], "Input",
+ CellChangeTimes->{{3.451969247461787*^9, 3.451969248527529*^9}}],
+
+Cell[BoxData[
+ FormBox["872187", TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.451969249346095*^9, 3.451969346585877*^9, {3.451969700061818*^9, 
+   3.451969738106398*^9}, 3.451969834011714*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"IntegerDigits", "[", 
+  RowBox[{"585", ",", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4519693939664383`*^9, 3.45196940989471*^9}, {
+  3.451969502160309*^9, 3.4519695053383627`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{
+   "1", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "1", ",", "0", 
+    ",", "0", ",", "1"}], "}"}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.451969402184455*^9, 3.4519694107890253`*^9}, 
+   3.4519695061483*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler 40", "Section",
+ CellChangeTimes->{{3.451587648652486*^9, 3.4515876501905737`*^9}}],
+
+Cell[TextData[{
+ "An irrational decimal fraction is created by concatenating the positive \
+integers : 0.123456789101112131415161718192021 ...\n\nIt can be seen that the \
+12th digit of the fractional part is 1.\n\nIf ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "n"], TraditionalForm]]],
+ " represents the n^(th) digit of the fractional part, find the value of the \
+following expression.\n\t",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "1"], TraditionalForm]]],
+ "*",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "10"], TraditionalForm]]],
+ "*",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "100"], TraditionalForm]]],
+ "*",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "1000"], TraditionalForm]]],
+ "*",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "10000"], TraditionalForm]]],
+ "*",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "100000"], TraditionalForm]]],
+ "*",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "1000000"], TraditionalForm]]]
+}], "Text",
+ CellChangeTimes->{{3.451589452243682*^9, 3.451589549173884*^9}}],
+
+Cell[BoxData[
+ RowBox[{"euler40", " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "d", "}"}], ",", "\n", "  ", 
+    RowBox[{
+     RowBox[{"d", " ", "=", " ", 
+      RowBox[{"Flatten", "[", 
+       RowBox[{"IntegerDigits", " ", "/@", " ", 
+        RowBox[{"Table", "[", 
+         RowBox[{"i", ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", " ", "500000"}], "}"}]}], "]"}]}], "]"}]}], ";", 
+     "\n", "   ", 
+     RowBox[{
+      RowBox[{"d", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "*", 
+      RowBox[{"d", "[", 
+       RowBox[{"[", "10", "]"}], "]"}], " ", "*", " ", 
+      RowBox[{"d", "[", 
+       RowBox[{"[", "100", "]"}], "]"}], " ", "*", " ", 
+      RowBox[{"d", "[", 
+       RowBox[{"[", "1000", "]"}], "]"}], " ", "*", " ", 
+      RowBox[{"d", "[", 
+       RowBox[{"[", "10000", "]"}], "]"}], "*", " ", 
+      RowBox[{"d", "[", 
+       RowBox[{"[", "100000", "]"}], "]"}], " ", "*", " ", 
+      RowBox[{"d", "[", 
+       RowBox[{"[", "1000000", "]"}], "]"}]}]}]}], "\n", "  ", 
+   "]"}]}]], "Code",
+ CellChangeTimes->{{3.451586804836796*^9, 3.451586811451955*^9}, {
+   3.451586846657323*^9, 3.4515868935266848`*^9}, {3.451586926065227*^9, 
+   3.451587049979075*^9}, {3.451587127540855*^9, 3.4515871994766073`*^9}, {
+   3.451587274888441*^9, 3.451587287877075*^9}, 3.451587528110948*^9, {
+   3.4515875967300463`*^9, 3.451587597705703*^9}, {3.451587732597575*^9, 
+   3.4515877783271933`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["euler40"], "Input",
+ CellChangeTimes->{{3.451587054566812*^9, 3.451587055578889*^9}}],
+
+Cell[BoxData[
+ FormBox["210", TraditionalForm]], "Output",
+ CellChangeTimes->{{3.4515877217220182`*^9, 3.451587785924258*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler 41", "Section",
+ CellChangeTimes->{{3.4519680447137003`*^9, 3.4519680461550093`*^9}}],
+
+Cell["\<\
+We shall say that an n - digit number is pandigital if it makes use of all \
+the digits 1 to n exactly once.For example, 2143 is a 4 - digit pandigital \
+and is also prime.What is the largest n - digit pandigital prime that exists?\
+\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"euler41", ":=", 
+  RowBox[{"FromDigits", "[", 
+   RowBox[{
+    RowBox[{"Permutations", "[", 
+     RowBox[{"{", 
+      RowBox[{
+      "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7"}], 
+      "}"}], "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"Max", "[", 
+      RowBox[{"Position", "[", 
+       RowBox[{
+        RowBox[{"PrimeQ", "/@", 
+         RowBox[{"FromDigits", "/@", 
+          RowBox[{"Permutations", "[", 
+           RowBox[{"{", 
+            RowBox[{
+            "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7"}],
+             "}"}], "]"}]}]}], ",", "True"}], "]"}], "]"}], "]"}], "]"}], 
+   "]"}]}]], "Code",
+ CellChangeTimes->{{3.451968058783209*^9, 3.451968068715294*^9}, {
+   3.451968122892199*^9, 3.451968150890483*^9}, {3.451968193405305*^9, 
+   3.451968196650312*^9}, 3.4519688050643663`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["euler41"], "Input",
+ CellChangeTimes->{{3.4519688089972763`*^9, 3.4519688102765417`*^9}}],
+
+Cell[BoxData[
+ FormBox["7652413", TraditionalForm]], "Output",
+ CellChangeTimes->{3.4519688110384493`*^9, 3.4519688583727217`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler 43", "Section",
+ CellChangeTimes->{{3.45197024118395*^9, 3.4519702424667463`*^9}, {
+  3.4522798634020987`*^9, 3.452279863445313*^9}}],
+
+Cell[TextData[{
+ "The number, 1406357289, is a 0 to 9 pandigital number because it is made up \
+of each of the digits 0 to 9 in some order, but it also has a rather \
+interesting sub - string divisibility property.\nLet ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "1"], TraditionalForm]]],
+ " be the ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["1", "st"], TraditionalForm]]],
+ " digit, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "2"], TraditionalForm]]],
+ " be the ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", "nd"], TraditionalForm]]],
+ " digit, and so on.In this way, we note the following :\n   ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "2"], TraditionalForm]]],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "3"], TraditionalForm]]],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "4"], TraditionalForm]]],
+ " = 406 is divisible by 2\n    ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "3"], TraditionalForm]]],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "4"], TraditionalForm]]],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["d", "5"], TraditionalForm]]],
+ " = 063 is divisible by 3\n    *d_ (4) d_ (5) d_ (6) = 635 is divisible by 5\
+\n    *d_ (5) d_ (6) d_ (7) = 357 is divisible by 7\n    *d_ (6) d_ (7) d_ \
+(8) = 572 is divisible by 11\n    *d_ (7) d_ (8) d_ (9) = 728 is divisible by \
+13\n    *d_ (8) d_ (9) d_ (10) = 289 is divisible by 17\n\nFind the sum of \
+all 0 to 9 pandigital numbers with this property."
+}], "Text",
+ CellChangeTimes->{
+  3.4519703586432543`*^9, {3.452281004292616*^9, 3.452281124704281*^9}}],
+
+Cell[BoxData[
+ RowBox[{"euler43", ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "SubDivQ", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"SubDivQ", "[", "l_List", "]"}], ":=", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Count", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"Mod", "[", 
+               RowBox[{
+                RowBox[{"FromDigits", "[", 
+                 RowBox[{"l", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"#", ";;", 
+                    RowBox[{"#", "+", "2"}]}], "]"}], "]"}], "]"}], ",", 
+                RowBox[{"Prime", "[", 
+                 RowBox[{"#", "-", "1"}], "]"}]}], "]"}], "\[Equal]", "0"}], 
+             "&"}], "/@", 
+            RowBox[{"Range", "[", 
+             RowBox[{"2", ",", "8"}], "]"}]}], ",", "False"}], "]"}], 
+         "\[Equal]", "0"}], ",", 
+        RowBox[{"FromDigits", "[", "l", "]"}], ",", "0"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Total", "[", 
+      RowBox[{"SubDivQ", "/@", 
+       RowBox[{"Permutations", "[", 
+        RowBox[{"{", 
+         RowBox[{
+         "0", ",", "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",",
+           "7", ",", "8", ",", "9"}], "}"}], "]"}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Code",
+ CellChangeTimes->{{3.45197025122832*^9, 3.451970259452813*^9}, {
+   3.451970362027762*^9, 3.451970510940754*^9}, {3.45197080480376*^9, 
+   3.4519708473857803`*^9}, {3.451970970839652*^9, 3.451971002038138*^9}, {
+   3.451971232548517*^9, 3.451971244273678*^9}, {3.451971317725698*^9, 
+   3.451971441086936*^9}, {3.4519714763875217`*^9, 3.451971540410369*^9}, {
+   3.451971647823781*^9, 3.45197167353194*^9}, {3.451971744545916*^9, 
+   3.4519717517788153`*^9}, {3.451971807097397*^9, 3.451971832945773*^9}, {
+   3.4519720053953953`*^9, 3.451972013920361*^9}, {3.4519721271832447`*^9, 
+   3.4519722054584503`*^9}, {3.4519725250601807`*^9, 3.451972536878791*^9}, {
+   3.45197257526884*^9, 3.451972585964184*^9}, 3.4519726161601887`*^9, {
+   3.452279867570863*^9, 3.452279867611519*^9}, {3.452280106950782*^9, 
+   3.452280183131971*^9}, {3.452280448443461*^9, 3.452280468998383*^9}, {
+   3.452280577239952*^9, 3.452280580833753*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["euler43"], "Input",
+ CellChangeTimes->{{3.451970486016714*^9, 3.451970487075254*^9}, {
+  3.45228013618084*^9, 3.4522801363528423`*^9}}],
+
+Cell[BoxData[
+ FormBox["16695334890", TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.4519704876232758`*^9, 3.451970857526598*^9, 3.451971005830917*^9, 
+   3.451971249132134*^9, {3.451971372504137*^9, 3.451971379827374*^9}, 
+   3.451971528203868*^9, 3.4519715592598352`*^9, 3.451971735300185*^9, 
+   3.451971765975766*^9, 3.451971971911667*^9, 3.4519720173028793`*^9, {
+   3.451972166423707*^9, 3.451972194712429*^9}, 3.4519733312461023`*^9, {
+   3.452280131681429*^9, 3.4522801855168133`*^9}, 3.452280498860302*^9, 
+   3.452280805613467*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler 66", "Section",
+ CellChangeTimes->{{3.451589077756563*^9, 3.451589079166835*^9}}],
+
+Cell[TextData[{
+ "Consider quadratic Diophantine equations of the form : ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "2"], TraditionalForm]]],
+ " \[Dash] D",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["y", "2"], TraditionalForm]]],
+ " = 1\n\nFor example, when D = 13, the minimal solution in x is ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["649", "2"], TraditionalForm]]],
+ " \[Dash] 13*",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["180", "2"], TraditionalForm]]],
+ " = 1.\n\nIt can be assumed that there are no solutions in positive integers \
+when D is square.By finding minimal solutions in x for D = {2, 3, 5, 6, 7}, \
+we obtain the following : ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["3", "2"], TraditionalForm]]],
+ " \[Dash] 2*",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", "2"], TraditionalForm]]],
+ " = 1\n",
+ StyleBox[Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", "2"], TraditionalForm]], "InlineFormula"], 
+  "InlineFormula"],
+ StyleBox[" \[Dash] 3*", "InlineFormula"],
+ StyleBox[Cell[BoxData[
+  FormBox[
+   SuperscriptBox["1", "2"], TraditionalForm]], "InlineFormula"], 
+  "InlineFormula"],
+ StyleBox[" = 1\n", "InlineFormula"],
+ StyleBox[Cell[BoxData[
+  FormBox[
+   SuperscriptBox["9", "2"], TraditionalForm]], "InlineFormula"], 
+  "InlineFormula"],
+ StyleBox[" \[Dash] 5*", "InlineFormula"],
+ StyleBox[Cell[BoxData[
+  FormBox[
+   SuperscriptBox["4", "2"], TraditionalForm]], "InlineFormula"], 
+  "InlineFormula"],
+ StyleBox[" = 1\n", "InlineFormula"],
+ StyleBox[Cell[BoxData[
+  FormBox[
+   SuperscriptBox["5", "2"], TraditionalForm]], "InlineFormula"], 
+  "InlineFormula"],
+ StyleBox[" \[Dash] 6*", "InlineFormula"],
+ StyleBox[Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", "2"], TraditionalForm]], "InlineFormula"], 
+  "InlineFormula"],
+ StyleBox[" = 1\n", "InlineFormula"],
+ StyleBox[Cell[BoxData[
+  FormBox[
+   SuperscriptBox["8", "2"], TraditionalForm]], "InlineFormula"], 
+  "InlineFormula"],
+ StyleBox[" \[Dash] 7*", "InlineFormula"],
+ StyleBox[Cell[BoxData[
+  FormBox[
+   SuperscriptBox["3", "2"], TraditionalForm]], "InlineFormula"], 
+  "InlineFormula"],
+ StyleBox[" = 1\n", "InlineFormula"],
+ "\nHence, by considering minimal solutions in x for D \[LessEqual] 7, the \
+largest x is obtained when D = 5.\n\nFind the value of D \[LessEqual] 1000 in \
+minimal solutions of x for which the largest value of x is obtained."
+}], "Text",
+ CellChangeTimes->{{3.451589175792268*^9, 3.4515893576761427`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"euler66", " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"t", ",", " ", "dioph"}], "}"}], ",", "\n", "\t", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"dioph", "[", "d_", "]"}], " ", ":=", " ", 
+      RowBox[{
+       RowBox[{"FindInstance", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"x", "^", "2"}], " ", "-", " ", 
+            RowBox[{"d", "*", 
+             RowBox[{"y", "^", "2"}]}]}], " ", "==", " ", "1"}], " ", "&&", 
+          " ", 
+          RowBox[{"x", " ", ">", " ", "0"}], " ", "&&", " ", 
+          RowBox[{"y", " ", ">", " ", "0"}]}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", " ", "y"}], "}"}], ",", " ", "Integers"}], "]"}], 
+       "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", " ", "1", ",", " ", "2"}], "]"}], "]"}]}], ";", 
+     "\n", "\t", 
+     RowBox[{"t", " ", "=", " ", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"dioph", "[", "i", "]"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", " ", "1000"}], "}"}]}], "]"}]}], ";", "\n", "\t", 
+     RowBox[{"Position", "[", 
+      RowBox[{"t", ",", " ", 
+       RowBox[{
+        RowBox[{"Max", "[", "t", "]"}], "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}]}], "\n", "  ", 
+   "]"}]}]], "Code",
+ CellChangeTimes->{{3.451587945500605*^9, 3.451587978399383*^9}, {
+   3.451588067596521*^9, 3.451588070758963*^9}, {3.451588164458025*^9, 
+   3.451588164901553*^9}, {3.451588221836825*^9, 3.451588241578224*^9}, {
+   3.451588320825992*^9, 3.451588331807148*^9}, {3.451588392526772*^9, 
+   3.451588400279521*^9}, {3.451588432526869*^9, 3.451588509773159*^9}, 
+   3.451588542742476*^9, {3.451588967133045*^9, 3.4515890418381987`*^9}, {
+   3.451589101342057*^9, 3.451589119571084*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["euler66"], "Input",
+ CellChangeTimes->{{3.451589128224908*^9, 3.451589129816016*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"Part", "::", "\<\"partw\"\>"}], 
+   RowBox[{
+   ":", " "}], "\<\"Part \\!\\(TraditionalForm\\`1\\) of \
+\\!\\(TraditionalForm\\`\\({}\\)\\) does not exist. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
+\\\"Part::partw\\\"]\\)\"\>"}], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.451589130833969*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"Part", "::", "\<\"partw\"\>"}], 
+   RowBox[{
+   ":", " "}], "\<\"Part \\!\\(TraditionalForm\\`1\\) of \
+\\!\\(TraditionalForm\\`\\({}\\)\\) does not exist. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
+\\\"Part::partw\\\"]\\)\"\>"}], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.45158913086784*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"Part", "::", "\<\"partw\"\>"}], 
+   RowBox[{
+   ":", " "}], "\<\"Part \\!\\(TraditionalForm\\`1\\) of \
+\\!\\(TraditionalForm\\`\\({}\\)\\) does not exist. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/partw\\\", ButtonNote -> \
+\\\"Part::partw\\\"]\\)\"\>"}], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.451589130949057*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"General", "::", "\<\"stop\"\>"}], 
+   RowBox[{
+   ":", " "}], "\<\"Further output of \\!\\(TraditionalForm\\`\\(Part :: \
+\\\"partw\\\"\\)\\) will be suppressed during this calculation. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/stop\\\", \
+ButtonNote -> \\\"General::stop\\\"]\\)\"\>"}], TraditionalForm]], "Message", \
+"MSG",
+ CellChangeTimes->{3.451589130979101*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"661"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{3.451589147009259*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler  57", "Section",
+ CellChangeTimes->{{3.4516719967231283`*^9, 3.4516720004014673`*^9}}],
+
+Cell[TextData[{
+ "It is possible to show that the square root of two can be expressed as an \
+infinite continued fraction.\n\t",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox["2"], TraditionalForm]]],
+ " = 1 + 1/(2 + 1/(2 + 1/(2 + ...))) = 1.414213 ...\n\nBy expanding this for \
+the first four iterations, we get : 1 + 1/2 = 3/2 = 1.5\n1 + 1/(2 + 1/2) = \
+7/5 = 1.4\n1 + 1/(2 + 1/(2 + 1/2)) = 17/12 = 1.41666 ...\n1 + 1/(2 + 1/(2 + \
+1/(2 + 1/2))) = 41/29 = 1.41379 ...\n\nThe next three expansions are 99/70, \
+239/169, and 577/408, but the eighth expansion, 1393/985, is the first \
+example where the number of digits in the numerator exceeds the number of \
+digits in the denominator.In the first one - thousand expansions, how many \
+fractions contain a numerator with more digits than denominator?"
+}], "Text",
+ CellChangeTimes->{{3.451672019194818*^9, 3.4516720323877*^9}, {
+  3.451672067491186*^9, 3.451672068344899*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"euler57", "[", "n_", "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"fract", ",", " ", "count"}], "}"}], ",", "\[IndentingNewLine]", 
+    
+    RowBox[{
+     RowBox[{"count", "=", "0"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"i", "=", "1"}], ",", " ", 
+       RowBox[{"i", "\[LessEqual]", " ", "n"}], ",", " ", 
+       RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"fract", " ", "=", " ", 
+         RowBox[{"1", "+", 
+          RowBox[{"Nest", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"1", "/", 
+              RowBox[{"(", 
+               RowBox[{"2", "+", "#"}], ")"}]}], "&"}], ",", " ", "0", ",", 
+            " ", "i"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Length", "[", 
+            RowBox[{"IntegerDigits", "[", 
+             RowBox[{"Numerator", "[", "fract", "]"}], "]"}], "]"}], " ", ">",
+            " ", 
+           RowBox[{"Length", "[", 
+            RowBox[{"IntegerDigits", "[", 
+             RowBox[{"Denominator", "[", "fract", "]"}], "]"}], "]"}]}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"count", "++"}]}], "\[IndentingNewLine]", "]"}]}]}], 
+      "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", "count"}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Code",
+ CellChangeTimes->{{3.451673434405758*^9, 3.451673641517565*^9}, {
+  3.451673727242051*^9, 3.451673733472088*^9}, {3.451673801274473*^9, 
+  3.451673803785995*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"euler57", "[", "1000", "]"}]], "Input",
+ CellChangeTimes->{{3.451673807193266*^9, 3.451673822030203*^9}}],
+
+Cell[BoxData[
+ FormBox["153", TraditionalForm]], "Output",
+ CellChangeTimes->{{3.45167381835159*^9, 3.4516738247513247`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Euler 102", "Section",
+ CellChangeTimes->{{3.451676782045082*^9, 3.451676783675706*^9}}],
+
+Cell["\<\
+Three distinct points are plotted at random on a Cartesian plane, for which - \
+1000 <= x, y <= 1000, such that a triangle is formed.Consider the following \
+two triangles :
+\tA (-340, 495), B (-153, -910), C (835, -947)
+\tX (-175, 41), Y (-421, -714), Z (574, -645)
+
+It can be verified that triangle ABC contains the origin, whereas triangle \
+XYZ does not.Using triangles.txt (right click and' Save Link/Target As ...'), \
+a 27 K text file containing the co - ordinates of one thousand \"random\" \
+triangles, find the number of triangles for which the interior contains the \
+origin.\
+\>", "Text",
+ CellChangeTimes->{{3.451676798542437*^9, 3.4516768016833687`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"euler102", " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"arr", ",", "InteriorQ", ",", "triangle"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"arr", "=", 
+      RowBox[{"Import", "[", 
+       RowBox[{"\"\<~/src/euler/triangles.txt\>\"", ",", "\"\<Table\>\""}], 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"InteriorQ", "[", "t_", "]"}], ":=", 
+      RowBox[{"Module", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"v0", "=", 
+           RowBox[{"t", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+          RowBox[{"v1", "=", 
+           RowBox[{
+            RowBox[{"t", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "-", 
+            RowBox[{"t", "[", 
+             RowBox[{"[", "1", "]"}], "]"}]}]}], ",", 
+          RowBox[{"v2", "=", 
+           RowBox[{
+            RowBox[{"t", "[", 
+             RowBox[{"[", 
+              RowBox[{"-", "1"}], "]"}], "]"}], "-", 
+            RowBox[{"t", "[", 
+             RowBox[{"[", "1", "]"}], "]"}]}]}], ",", 
+          RowBox[{"v", "=", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0"}], "}"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"a", "=", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"Det", "[", 
+              RowBox[{"{", 
+               RowBox[{"v", ",", "v2"}], "}"}], "]"}], "-", 
+             RowBox[{"Det", "[", 
+              RowBox[{"{", 
+               RowBox[{"v0", ",", "v2"}], "}"}], "]"}]}], ")"}], "/", 
+           RowBox[{"Det", "[", 
+            RowBox[{"{", 
+             RowBox[{"v1", ",", "v2"}], "}"}], "]"}]}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"b", "=", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"Det", "[", 
+               RowBox[{"{", 
+                RowBox[{"v", ",", "v1"}], "}"}], "]"}], "-", 
+              RowBox[{"Det", "[", 
+               RowBox[{"{", 
+                RowBox[{"v0", ",", "v1"}], "}"}], "]"}]}], ")"}]}], "/", 
+           RowBox[{"Det", "[", 
+            RowBox[{"{", 
+             RowBox[{"v1", ",", "v2"}], "}"}], "]"}]}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"a", ">", "0"}], "&&", 
+          RowBox[{"b", ">", "0"}], "&&", 
+          RowBox[{
+           RowBox[{"a", "+", "b"}], "<", "1"}]}]}]}], "\[IndentingNewLine]", 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"triangle", "[", "row_", "]"}], " ", ":=", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"row", "[", 
+         RowBox[{"[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "2"}], "}"}], "]"}], "]"}], ",", 
+        RowBox[{"row", "[", 
+         RowBox[{"[", 
+          RowBox[{"{", 
+           RowBox[{"3", ",", "4"}], "}"}], "]"}], "]"}], ",", 
+        RowBox[{"row", "[", 
+         RowBox[{"[", 
+          RowBox[{"{", 
+           RowBox[{"5", ",", "6"}], "}"}], "]"}], "]"}]}], "}"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Count", "[", 
+      RowBox[{
+       RowBox[{"InteriorQ", " ", "/@", " ", 
+        RowBox[{"triangle", " ", "/@", " ", "arr"}]}], ",", "True"}], 
+      "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Code",
+ CellChangeTimes->{{3.451675915337997*^9, 3.4516759639318438`*^9}, {
+   3.4516759939900503`*^9, 3.451676006038075*^9}, {3.4516760634535847`*^9, 
+   3.451676079956431*^9}, {3.451676289455537*^9, 3.451676292312643*^9}, {
+   3.451676340937544*^9, 3.451676354446117*^9}, {3.451676489963768*^9, 
+   3.451676492116378*^9}, {3.451676552053082*^9, 3.451676573769236*^9}, {
+   3.451676615165509*^9, 3.451676615344344*^9}, {3.451676684636463*^9, 
+   3.4516766882483587`*^9}, {3.4516768882389927`*^9, 3.451676923378007*^9}, {
+   3.45167705470929*^9, 3.451677209067658*^9}, {3.451677348326313*^9, 
+   3.4516773977556067`*^9}, 3.4516775289192123`*^9, {3.451677725530632*^9, 
+   3.451677732097198*^9}, {3.451760818081588*^9, 3.451760843385557*^9}, {
+   3.451761531869532*^9, 3.451761535114647*^9}, {3.4519251423131037`*^9, 
+   3.451925217887747*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["euler102"], "Input",
+ CellChangeTimes->{{3.4516765028557863`*^9, 3.4516765041207237`*^9}, {
+  3.451676723903*^9, 3.451676745093618*^9}}],
+
+Cell[BoxData[
+ FormBox["228", TraditionalForm]], "Output",
+ CellChangeTimes->{{3.451676569857218*^9, 3.4516765769795523`*^9}, 
+   3.4516766216964893`*^9, 3.451676692178*^9, {3.4516767253642797`*^9, 
+   3.4516767464439907`*^9}, 3.451676844685074*^9, {3.451676899856531*^9, 
+   3.4516769258643627`*^9}, {3.451677117336718*^9, 3.4516771598447933`*^9}, 
+   3.451677211272087*^9, {3.451677356102462*^9, 3.451677364747897*^9}, 
+   3.451677404562264*^9, 3.451677532404079*^9, 3.451760848052228*^9, {
+   3.451761537572126*^9, 3.4517615435474443`*^9}, 3.451925226869368*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->Automatic,
+WindowSize->{640, 604},
+WindowMargins->{{8, Automatic}, {Automatic, 8}},
+FrontEndVersion->"6.0 for Mac OS X x86 (32-bit) (April 20, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 92, 1, 67, "Section"],
+Cell[685, 26, 1948, 39, 224, "Code"],
+Cell[CellGroupData[{
+Cell[2658, 69, 180, 3, 27, "Input"],
+Cell[2841, 74, 227, 4, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3117, 84, 93, 1, 67, "Section"],
+Cell[3213, 87, 1844, 42, 164, "Code"],
+Cell[CellGroupData[{
+Cell[5082, 133, 331, 8, 27, "Input"],
+Cell[5416, 143, 128, 3, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5581, 151, 344, 9, 27, "Input"],
+Cell[5928, 162, 350, 10, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6315, 177, 127, 2, 27, "Input"],
+Cell[6445, 181, 108, 2, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6590, 188, 125, 2, 27, "Input"],
+Cell[6718, 192, 131, 3, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6898, 201, 95, 1, 67, "Section"],
+Cell[6996, 204, 707, 12, 116, "Text"],
+Cell[7706, 218, 1598, 36, 119, "Code"],
+Cell[CellGroupData[{
+Cell[9329, 258, 99, 1, 27, "Input"],
+Cell[9431, 261, 155, 3, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9635, 270, 93, 1, 67, "Section"],
+Cell[9731, 273, 495, 10, 101, "Text"],
+Cell[10229, 285, 551, 13, 43, "Code"],
+Cell[CellGroupData[{
+Cell[10805, 302, 134, 2, 27, "Input"],
+Cell[10942, 306, 236, 6, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11227, 318, 95, 1, 67, "Section"],
+Cell[11325, 321, 736, 19, 236, "Text"],
+Cell[12064, 342, 792, 21, 89, "Code"],
+Cell[CellGroupData[{
+Cell[12881, 367, 99, 1, 27, "Input"],
+Cell[12983, 370, 576, 16, 29, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13608, 392, 95, 1, 67, "Section"],
+Cell[13706, 395, 981, 24, 281, "Text"],
+Cell[14690, 421, 3327, 76, 224, "Code"],
+Cell[CellGroupData[{
+Cell[18042, 501, 101, 1, 27, "Input"],
+Cell[18146, 504, 169, 4, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18364, 514, 93, 1, 67, "Section"],
+Cell[18460, 517, 351, 12, 161, "Text"],
+Cell[18814, 531, 2149, 39, 88, "Input"],
+Cell[CellGroupData[{
+Cell[20988, 574, 426, 10, 27, "Input"],
+Cell[21417, 586, 665, 13, 39, "Message"],
+Cell[22085, 601, 643, 18, 47, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22777, 625, 94, 1, 67, "Section"],
+Cell[22874, 628, 490, 13, 131, "Text"],
+Cell[23367, 643, 1594, 35, 149, "Code"],
+Cell[CellGroupData[{
+Cell[24986, 682, 147, 2, 27, "Input"],
+Cell[CellGroupData[{
+Cell[25158, 688, 174, 4, 20, "Print"],
+Cell[25335, 694, 174, 4, 20, "Print"],
+Cell[25512, 700, 177, 4, 20, "Print"],
+Cell[25692, 706, 174, 4, 20, "Print"],
+Cell[25869, 712, 177, 4, 20, "Print"],
+Cell[26049, 718, 176, 4, 20, "Print"]
+}, Open  ]],
+Cell[26240, 725, 197, 3, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26486, 734, 93, 1, 67, "Section"],
+Cell[26582, 737, 643, 14, 161, "Text"],
+Cell[27228, 753, 2133, 50, 164, "Code"],
+Cell[CellGroupData[{
+Cell[29386, 807, 103, 1, 27, "Input"],
+Cell[29492, 810, 271, 4, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29812, 820, 96, 1, 67, "Section"],
+Cell[29911, 823, 241, 5, 71, "Text"],
+Cell[30155, 830, 1102, 29, 149, "Code"],
+Cell[CellGroupData[{
+Cell[31282, 863, 99, 1, 27, "Input"],
+Cell[31384, 866, 154, 3, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31587, 875, 94, 1, 67, "Section"],
+Cell[31684, 878, 299, 6, 71, "Text"],
+Cell[31986, 886, 1582, 36, 209, "Code"],
+Cell[33571, 924, 1115, 28, 209, "Code"],
+Cell[CellGroupData[{
+Cell[34711, 956, 132, 2, 27, "Input"],
+Cell[34846, 960, 99, 2, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34994, 968, 93, 1, 67, "Section"],
+Cell[35090, 971, 447, 10, 86, "Text"],
+Cell[35540, 983, 1726, 42, 179, "Code"],
+Cell[CellGroupData[{
+Cell[37291, 1029, 99, 1, 27, "Input"],
+Cell[37393, 1032, 200, 4, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37630, 1041, 209, 4, 27, "Input"],
+Cell[37842, 1047, 284, 7, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38175, 1060, 95, 1, 67, "Section"],
+Cell[38273, 1063, 1045, 37, 116, "Text"],
+Cell[39321, 1102, 1444, 35, 89, "Code"],
+Cell[CellGroupData[{
+Cell[40790, 1141, 99, 1, 27, "Input"],
+Cell[40892, 1144, 126, 2, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41067, 1152, 97, 1, 67, "Section"],
+Cell[41167, 1155, 257, 5, 56, "Text"],
+Cell[41427, 1162, 864, 23, 43, "Code"],
+Cell[CellGroupData[{
+Cell[42316, 1189, 103, 1, 27, "Input"],
+Cell[42422, 1192, 130, 2, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42601, 1200, 145, 2, 67, "Section"],
+Cell[42749, 1204, 1589, 50, 197, "Text"],
+Cell[44341, 1256, 2346, 51, 104, "Code"],
+Cell[CellGroupData[{
+Cell[46712, 1311, 149, 2, 27, "Input"],
+Cell[46864, 1315, 547, 9, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47460, 1330, 93, 1, 67, "Section"],
+Cell[47556, 1333, 2450, 72, 242, "Text"],
+Cell[50009, 1407, 1831, 45, 104, "Code"],
+Cell[CellGroupData[{
+Cell[51865, 1456, 99, 1, 27, "Input"],
+Cell[51967, 1459, 478, 10, 23, "Message"],
+Cell[52448, 1471, 477, 10, 23, "Message"],
+Cell[52928, 1483, 478, 10, 23, "Message"],
+Cell[53409, 1495, 511, 11, 23, "Message"],
+Cell[53923, 1508, 574, 16, 29, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54546, 1530, 98, 1, 67, "Section"],
+Cell[54647, 1533, 920, 16, 181, "Text"],
+Cell[55570, 1551, 1643, 41, 179, "Code"],
+Cell[CellGroupData[{
+Cell[57238, 1596, 129, 2, 27, "Input"],
+Cell[57370, 1600, 125, 2, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[57544, 1608, 94, 1, 67, "Section"],
+Cell[57641, 1611, 678, 13, 131, "Text"],
+Cell[58322, 1626, 4201, 107, 179, "Code"],
+Cell[CellGroupData[{
+Cell[62548, 1737, 150, 2, 27, "Input"],
+Cell[62701, 1741, 565, 8, 27, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

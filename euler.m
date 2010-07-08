@@ -199,15 +199,19 @@ y = Position[arr, Max[Flatten[arr]]][[1,2]];
 
 
 (* ::Input:: *)
-(*spiralarray[arr_] := Module[{dim},*)
-(*dim = Dimensions[arr][[1]];*)
-(*AppendTo[arr[[1]],(dim^2)+1];*)
-(*arr*)
-(*]*)
+(*euler28:=Module[{},*)
+(*$RecursionLimit=5000;*)
+(*spiralcount[n_]:=(n-1)*8;*)
+(*topright[n_]:=If[n==1,Return[1],topright[n-1]+spiralcount[n]];*)
+(*topleft[n_]:=topright[n]-2*(n-1);*)
+(*bottomleft[n_]:=topleft[n]-2(n-1);*)
+(*bottomright[n_]:=bottomleft[n]-2(n-1);*)
+(*diagonalsum[n_]:=If[n==1,Return[1],topright[n]+topleft[n]+bottomleft[n]+bottomright[n]+diagonalsum[n-1]];*)
+(*diagonalsum[501]]*)
 
 
 (* ::Input:: *)
-(*spiralarray[{{1,2},{4,3}}]*)
+(*euler28*)
 
 
 (* ::Section:: *)

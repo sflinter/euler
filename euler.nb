@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     70956,       1981]
-NotebookOptionsPosition[     65082,       1779]
-NotebookOutlinePosition[     65453,       1795]
-CellTagsIndexPosition[     65410,       1792]
+NotebookDataLength[     76675,       2182]
+NotebookOptionsPosition[     70107,       1956]
+NotebookOutlinePosition[     70478,       1972]
+CellTagsIndexPosition[     70435,       1969]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -758,8 +758,139 @@ Cell[BoxData[
 
 Cell[CellGroupData[{
 
+Cell["Euler 31", "Section",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellChangeTimes->{{3.451933704112808*^9, 3.451933707792777*^9}, {
+  3.488994603340086*^9, 3.488994631530861*^9}, {3.4889947069118958`*^9, 
+  3.488994707926218*^9}}],
+
+Cell["\<\
+In England the currency is made up of pound, \[Sterling], and pence, p, and \
+there are eight coins in general circulation : 1 p, 2 p, 5 p, 10 p, 20 p, 50 \
+p, \[Sterling]1 (100 p) and \[Sterling]2 (200 p).It is possible to make \
+\[Sterling]2 in the following way : 1 \[Sterling]1 + 150 p + 220 p + 15 p + \
+12 p + 31 p
+How many different ways can \[Sterling]2 be made using any number of coins? \
+\>", "Text",
+ CellChangeTimes->{{3.4889946737708807`*^9, 3.488994726472952*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"Exp", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "10"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"1", "+", "x", "+", 
+    FractionBox[
+     SuperscriptBox["x", "2"], "2"], "+", 
+    FractionBox[
+     SuperscriptBox["x", "3"], "6"], "+", 
+    FractionBox[
+     SuperscriptBox["x", "4"], "24"], "+", 
+    FractionBox[
+     SuperscriptBox["x", "5"], "120"], "+", 
+    FractionBox[
+     SuperscriptBox["x", "6"], "720"], "+", 
+    FractionBox[
+     SuperscriptBox["x", "7"], "5040"], "+", 
+    FractionBox[
+     SuperscriptBox["x", "8"], "40320"], "+", 
+    FractionBox[
+     SuperscriptBox["x", "9"], "362880"], "+", 
+    FractionBox[
+     SuperscriptBox["x", "10"], "3628800"], "+", 
+    InterpretationBox[
+     RowBox[{"O", "(", 
+      SuperscriptBox["x", "11"], ")"}],
+     SeriesData[$CellContext`x, 0, {}, 0, 11, 1],
+     Editable->False]}],
+   SeriesData[$CellContext`x, 0, {1, 1, 
+     Rational[1, 2], 
+     Rational[1, 6], 
+     Rational[1, 24], 
+     Rational[1, 120], 
+     Rational[1, 720], 
+     Rational[1, 5040], 
+     Rational[1, 40320], 
+     Rational[1, 362880], 
+     Rational[1, 3628800]}, 0, 11, 1],
+   Editable->False], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4889947624922047`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gf", "=", 
+  RowBox[{"1", "/", 
+   RowBox[{"Apply", "[", 
+    RowBox[{"Times", ",", 
+     RowBox[{"1", "-", 
+      RowBox[{"z", "^", 
+       RowBox[{"{", 
+        RowBox[{
+        "1", ",", "2", ",", "5", ",", "10", ",", "20", ",", "50", ",", "100", 
+         ",", "200"}], "}"}]}]}]}], "]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  FractionBox["1", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "-", "z"}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      SuperscriptBox["z", "2"]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      SuperscriptBox["z", "5"]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      SuperscriptBox["z", "10"]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      SuperscriptBox["z", "20"]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      SuperscriptBox["z", "50"]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      SuperscriptBox["z", "100"]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      SuperscriptBox["z", "200"]}], ")"}]}]], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4889947838530416`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SeriesCoefficient", "[", 
+  RowBox[{
+   RowBox[{"Series", "[", 
+    RowBox[{"gf", ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", "0", ",", "200"}], "}"}]}], "]"}], ",", "200"}], 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ FormBox["73682", TraditionalForm]], "Output",
+ CellChangeTimes->{3.488994798647596*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
 Cell["Euler 32", "Section",
- CellChangeTimes->{{3.451933704112808*^9, 3.451933707792777*^9}}],
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellChangeTimes->{{3.451933704112808*^9, 3.451933707792777*^9}, {
+  3.488994603340086*^9, 3.488994631530861*^9}}],
 
 Cell["\<\
 We shall say that an n - digit number is pandigital if it makes use of all \
@@ -1084,8 +1215,28 @@ Cell[BoxData[
 
 Cell[CellGroupData[{
 
-Cell["Euler 40", "Section",
- CellChangeTimes->{{3.451587648652486*^9, 3.4515876501905737`*^9}}],
+Cell["Euler 39", "Section",
+ CellChangeTimes->{{3.451587648652486*^9, 3.4515876501905737`*^9}, {
+  3.488995036732732*^9, 3.488995041255992*^9}}],
+
+Cell["\<\
+If p is the perimeter of a right angle triangle with integral length sides, \
+{a, b, c}, there are exactly three solutions for p = 120.
+
+{20, 48, 52}, {24, 45, 51}, {30, 40, 50}
+
+For which value of p 1000, is the number of solutions maximised?\
+\>", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+
+Euler 40\
+\>", "Section",
+ CellChangeTimes->{{3.451587648652486*^9, 3.4515876501905737`*^9}, {
+  3.488995036732732*^9, 3.488995041255992*^9}}],
 
 Cell[TextData[{
  "An irrational decimal fraction is created by concatenating the positive \
@@ -1354,8 +1505,34 @@ Cell[BoxData[
 
 Cell[CellGroupData[{
 
+Cell[TextData[{
+ "Euler 50",
+ Cell[""]
+}], "Section",
+ CellChangeTimes->{{3.451589077756563*^9, 3.451589079166835*^9}, {
+  3.487613559583804*^9, 3.487613585558687*^9}, {3.487613674896723*^9, 
+  3.48761373293365*^9}}],
+
+Cell["\<\
+The prime 41, can be written as the sum of six consecutive primes:
+
+41 = 2 + 3 + 5 + 7 + 11 + 13
+This is the longest sum of consecutive primes that adds to a prime below \
+one-hundred.
+
+The longest sum of consecutive primes below one-thousand that adds to a \
+prime, contains 21 terms, and is equal to 953.
+
+Which prime, below one-million, can be written as the sum of the most \
+consecutive primes?\
+\>", "Text",
+ CellChangeTimes->{{3.487614087385182*^9, 3.487614116322703*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
 Cell["Euler 66", "Section",
- CellChangeTimes->{{3.451589077756563*^9, 3.451589079166835*^9}}],
+ CellChangeTimes->{{3.487613554221537*^9, 3.4876135567339163`*^9}}],
 
 Cell[TextData[{
  "Consider quadratic Diophantine equations of the form : ",
@@ -1778,8 +1955,8 @@ Cell[BoxData[
 }, Open  ]]
 },
 AutoGeneratedPackage->Automatic,
-WindowSize->{640, 604},
-WindowMargins->{{Automatic, 633}, {Automatic, 65}},
+WindowSize->{739, 1021},
+WindowMargins->{{Automatic, 449}, {Automatic, 0}},
 FrontEndVersion->"6.0 for Mac OS X x86 (32-bit) (April 20, 2007)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1824,7 +2001,7 @@ Cell[6718, 192, 131, 3, 27, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[6898, 201, 95, 1, 67, "Section"],
-Cell[6996, 204, 707, 12, 116, "Text"],
+Cell[6996, 204, 707, 12, 101, "Text"],
 Cell[7706, 218, 1598, 36, 119, "Code"],
 Cell[CellGroupData[{
 Cell[9329, 258, 99, 1, 27, "Input"],
@@ -1842,7 +2019,7 @@ Cell[10942, 306, 236, 6, 27, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[11227, 318, 95, 1, 67, "Section"],
-Cell[11325, 321, 736, 19, 236, "Text"],
+Cell[11325, 321, 736, 19, 206, "Text"],
 Cell[12064, 342, 792, 21, 89, "Code"],
 Cell[CellGroupData[{
 Cell[12881, 367, 99, 1, 27, "Input"],
@@ -1851,7 +2028,7 @@ Cell[12983, 370, 576, 16, 29, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[13608, 392, 95, 1, 67, "Section"],
-Cell[13706, 395, 981, 24, 281, "Text"],
+Cell[13706, 395, 981, 24, 266, "Text"],
 Cell[14690, 421, 3327, 76, 224, "Code"],
 Cell[CellGroupData[{
 Cell[18042, 501, 101, 1, 27, "Input"],
@@ -1860,7 +2037,7 @@ Cell[18146, 504, 169, 4, 27, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[18364, 514, 93, 1, 67, "Section"],
-Cell[18460, 517, 351, 12, 161, "Text"],
+Cell[18460, 517, 351, 12, 146, "Text"],
 Cell[18814, 531, 4333, 88, 178, "Input"],
 Cell[CellGroupData[{
 Cell[23172, 623, 939, 13, 27, "Input"],
@@ -1885,102 +2062,126 @@ Cell[28028, 751, 197, 3, 27, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28274, 760, 93, 1, 67, "Section"],
-Cell[28370, 763, 643, 14, 161, "Text"],
-Cell[29016, 779, 2133, 50, 164, "Code"],
+Cell[28274, 760, 225, 4, 66, "Section"],
+Cell[28502, 766, 489, 8, 56, "Text"],
 Cell[CellGroupData[{
-Cell[31174, 833, 103, 1, 27, "Input"],
-Cell[31280, 836, 271, 4, 27, "Output"]
+Cell[29016, 778, 173, 5, 27, "Input"],
+Cell[29192, 785, 1169, 38, 49, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30398, 828, 331, 10, 27, "Input"],
+Cell[30732, 840, 816, 27, 53, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31585, 872, 223, 7, 27, "Input"],
+Cell[31811, 881, 102, 2, 27, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[31600, 846, 96, 1, 67, "Section"],
-Cell[31699, 849, 241, 5, 71, "Text"],
-Cell[31943, 856, 1102, 29, 149, "Code"],
+Cell[31962, 889, 174, 3, 66, "Section"],
+Cell[32139, 894, 643, 14, 146, "Text"],
+Cell[32785, 910, 2133, 50, 164, "Code"],
 Cell[CellGroupData[{
-Cell[33070, 889, 99, 1, 27, "Input"],
-Cell[33172, 892, 154, 3, 27, "Output"]
+Cell[34943, 964, 103, 1, 27, "Input"],
+Cell[35049, 967, 271, 4, 27, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[33375, 901, 94, 1, 67, "Section"],
-Cell[33472, 904, 299, 6, 71, "Text"],
-Cell[33774, 912, 1582, 36, 209, "Code"],
-Cell[35359, 950, 1115, 28, 209, "Code"],
+Cell[35369, 977, 96, 1, 67, "Section"],
+Cell[35468, 980, 241, 5, 71, "Text"],
+Cell[35712, 987, 1102, 29, 149, "Code"],
 Cell[CellGroupData[{
-Cell[36499, 982, 132, 2, 27, "Input"],
-Cell[36634, 986, 99, 2, 27, "Output"]
+Cell[36839, 1020, 99, 1, 27, "Input"],
+Cell[36941, 1023, 154, 3, 27, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[36782, 994, 93, 1, 67, "Section"],
-Cell[36878, 997, 447, 10, 86, "Text"],
-Cell[37328, 1009, 1726, 42, 179, "Code"],
+Cell[37144, 1032, 94, 1, 67, "Section"],
+Cell[37241, 1035, 299, 6, 71, "Text"],
+Cell[37543, 1043, 1582, 36, 209, "Code"],
+Cell[39128, 1081, 1115, 28, 209, "Code"],
 Cell[CellGroupData[{
-Cell[39079, 1055, 99, 1, 27, "Input"],
-Cell[39181, 1058, 200, 4, 27, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[39418, 1067, 209, 4, 27, "Input"],
-Cell[39630, 1073, 284, 7, 27, "Output"]
+Cell[40268, 1113, 132, 2, 27, "Input"],
+Cell[40403, 1117, 99, 2, 27, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[39963, 1086, 95, 1, 67, "Section"],
-Cell[40061, 1089, 1045, 37, 116, "Text"],
-Cell[41109, 1128, 1444, 35, 89, "Code"],
+Cell[40551, 1125, 93, 1, 67, "Section"],
+Cell[40647, 1128, 447, 10, 86, "Text"],
+Cell[41097, 1140, 1726, 42, 179, "Code"],
 Cell[CellGroupData[{
-Cell[42578, 1167, 99, 1, 27, "Input"],
-Cell[42680, 1170, 126, 2, 27, "Output"]
+Cell[42848, 1186, 99, 1, 27, "Input"],
+Cell[42950, 1189, 200, 4, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43187, 1198, 209, 4, 27, "Input"],
+Cell[43399, 1204, 284, 7, 27, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[42855, 1178, 97, 1, 67, "Section"],
-Cell[42955, 1181, 257, 5, 56, "Text"],
-Cell[43215, 1188, 864, 23, 43, "Code"],
+Cell[43732, 1217, 144, 2, 67, "Section"],
+Cell[43879, 1221, 267, 7, 86, "Text"]
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[44104, 1215, 103, 1, 27, "Input"],
-Cell[44210, 1218, 130, 2, 27, "Output"]
+Cell[44183, 1233, 153, 5, 89, "Section"],
+Cell[44339, 1240, 1045, 37, 101, "Text"],
+Cell[45387, 1279, 1444, 35, 89, "Code"],
+Cell[CellGroupData[{
+Cell[46856, 1318, 99, 1, 27, "Input"],
+Cell[46958, 1321, 126, 2, 27, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[44389, 1226, 145, 2, 67, "Section"],
-Cell[44537, 1230, 1589, 50, 197, "Text"],
-Cell[46129, 1282, 2346, 51, 104, "Code"],
+Cell[47133, 1329, 97, 1, 67, "Section"],
+Cell[47233, 1332, 257, 5, 41, "Text"],
+Cell[47493, 1339, 864, 23, 43, "Code"],
 Cell[CellGroupData[{
-Cell[48500, 1337, 149, 2, 27, "Input"],
-Cell[48652, 1341, 547, 9, 27, "Output"]
+Cell[48382, 1366, 103, 1, 27, "Input"],
+Cell[48488, 1369, 130, 2, 27, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[49248, 1356, 93, 1, 67, "Section"],
-Cell[49344, 1359, 2450, 72, 242, "Text"],
-Cell[51797, 1433, 1831, 45, 104, "Code"],
+Cell[48667, 1377, 145, 2, 67, "Section"],
+Cell[48815, 1381, 1589, 50, 197, "Text"],
+Cell[50407, 1433, 2346, 51, 104, "Code"],
 Cell[CellGroupData[{
-Cell[53653, 1482, 99, 1, 27, "Input"],
-Cell[53755, 1485, 478, 10, 23, "Message"],
-Cell[54236, 1497, 477, 10, 23, "Message"],
-Cell[54716, 1509, 478, 10, 23, "Message"],
-Cell[55197, 1521, 511, 11, 23, "Message"],
-Cell[55711, 1534, 574, 16, 29, "Output"]
+Cell[52778, 1488, 149, 2, 27, "Input"],
+Cell[52930, 1492, 547, 9, 27, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[56334, 1556, 98, 1, 67, "Section"],
-Cell[56435, 1559, 920, 16, 181, "Text"],
-Cell[57358, 1577, 1643, 41, 179, "Code"],
+Cell[53526, 1507, 216, 6, 67, "Section"],
+Cell[53745, 1515, 489, 13, 131, "Text"]
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[59026, 1622, 129, 2, 27, "Input"],
-Cell[59158, 1626, 125, 2, 27, "Output"]
+Cell[54271, 1533, 95, 1, 67, "Section"],
+Cell[54369, 1536, 2450, 72, 242, "Text"],
+Cell[56822, 1610, 1831, 45, 104, "Code"],
+Cell[CellGroupData[{
+Cell[58678, 1659, 99, 1, 27, "Input"],
+Cell[58780, 1662, 478, 10, 23, "Message"],
+Cell[59261, 1674, 477, 10, 23, "Message"],
+Cell[59741, 1686, 478, 10, 23, "Message"],
+Cell[60222, 1698, 511, 11, 23, "Message"],
+Cell[60736, 1711, 574, 16, 29, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[59332, 1634, 94, 1, 67, "Section"],
-Cell[59429, 1637, 678, 13, 131, "Text"],
-Cell[60110, 1652, 4201, 107, 179, "Code"],
+Cell[61359, 1733, 98, 1, 67, "Section"],
+Cell[61460, 1736, 920, 16, 181, "Text"],
+Cell[62383, 1754, 1643, 41, 179, "Code"],
 Cell[CellGroupData[{
-Cell[64336, 1763, 150, 2, 27, "Input"],
-Cell[64489, 1767, 565, 8, 27, "Output"]
+Cell[64051, 1799, 129, 2, 27, "Input"],
+Cell[64183, 1803, 125, 2, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64357, 1811, 94, 1, 67, "Section"],
+Cell[64454, 1814, 678, 13, 131, "Text"],
+Cell[65135, 1829, 4201, 107, 179, "Code"],
+Cell[CellGroupData[{
+Cell[69361, 1940, 150, 2, 27, "Input"],
+Cell[69514, 1944, 565, 8, 27, "Output"]
 }, Open  ]]
 }, Open  ]]
 }

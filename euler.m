@@ -244,6 +244,27 @@ count
 
 
 (* ::Section:: *)
+(*Euler 31*)
+
+
+(* ::Text:: *)
+(*In England the currency is made up of pound, \[Sterling], and pence, p, and there are eight coins in general circulation : 1 p, 2 p, 5 p, 10 p, 20 p, 50 p, \[Sterling]1 (100 p) and \[Sterling]2 (200 p).It is possible to make \[Sterling]2 in the following way : 1 \[Sterling]1 + 150 p + 220 p + 15 p + 12 p + 31 p*)
+(*How many different ways can \[Sterling]2 be made using any number of coins? *)
+
+
+(* ::Input:: *)
+(*Series[Exp[x],{x,0,10}]*)
+
+
+(* ::Input:: *)
+(*gf=1/Apply[Times,1-z^{1,2,5,10,20,50,100,200}]*)
+
+
+(* ::Input:: *)
+(*SeriesCoefficient[Series[gf,{z,0,200}],200]*)
+
+
+(* ::Section:: *)
 (*Euler 32*)
 
 
@@ -370,6 +391,19 @@ sum
 
 
 (* ::Section:: *)
+(*Euler 39*)
+
+
+(* ::Text:: *)
+(*If p is the perimeter of a right angle triangle with integral length sides, {a, b, c}, there are exactly three solutions for p = 120.*)
+(**)
+(*{20, 48, 52}, {24, 45, 51}, {30, 40, 50}*)
+(**)
+(*For which value of p 1000, is the number of solutions maximised?*)
+
+
+(* ::Section:: *)
+(**)
 (*Euler 40*)
 
 
@@ -434,6 +468,21 @@ Total[SubDivQ/@Permutations[{0,1,2,3,4,5,6,7,8,9}]]
 
 (* ::Input:: *)
 (*euler43*)
+
+
+(* ::Section:: *)
+(*Euler 50*)
+
+
+(* ::Text:: *)
+(*The prime 41, can be written as the sum of six consecutive primes:*)
+(**)
+(*41 = 2 + 3 + 5 + 7 + 11 + 13*)
+(*This is the longest sum of consecutive primes that adds to a prime below one-hundred.*)
+(**)
+(*The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953.*)
+(**)
+(*Which prime, below one-million, can be written as the sum of the most consecutive primes?*)
 
 
 (* ::Section:: *)
